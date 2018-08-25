@@ -24,7 +24,7 @@ let GetUserConfig = () => {
   //Message Frame
   let requestPayload = {
     UserName: variables.userLogin,
-    UserId: variables.userId
+    UserId: parseInt(variables.userId)
   };
   let frame = {
     m: 0,
@@ -32,7 +32,7 @@ let GetUserConfig = () => {
     n: "GetUserConfig",
     o: JSON.stringify(requestPayload)
   };
-
+  console.log(frame);
   variables.ws.send(JSON.stringify(frame), function ack(error) {
     if (error) {
       console.log("GetUserInfo.error: (" + error + ")");
@@ -42,7 +42,7 @@ let GetUserConfig = () => {
 
 let GetUserPermissions = () => {
   //Message Frame
-  let requestPayload = { UserId: variables.userId };
+  let requestPayload = { UserId: parseInt(variables.userId) };
   let frame = {
     m: 0,
     i: 1,

@@ -64,7 +64,7 @@ let SendOrder = (
 
   var requestPayload = {
     AccountId: variables.accountId,
-    ClientOrderId: variables.userId,
+    ClientOrderId: parseInt(variables.userId),
     Quantity: Quantity,
     DisplayQuantity: 0,
     UseDisplayQuantity: true,
@@ -235,7 +235,7 @@ let GetOpenOrders = () => {
 let CancelAllOrders = (instrumentId = 1) => {
   let requestPayload = {
     AccountId: variables.accountId,
-    UserId: variables.userId,
+    UserId: parseInt(variables.userId),
     OMSId: variables.OMSId,
     InstrumentId: instrumentId
   };

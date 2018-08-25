@@ -6,9 +6,9 @@ let password = "";
 
 foxbit.Connect(user, password);
 
-// foxbit.eventEmitter.on("Connected", res => {
-//   console.log(res);
-// });
+foxbit.eventEmitter.on("Connected", res => {
+  console.log(res);
+});
 
 // *************************************************************
 // ******************** Métodos Privados ***********************

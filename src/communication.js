@@ -27,32 +27,39 @@ variables.ws.on("end", function(data) {
 let dealMessage = message => {
   let ret = JSON.parse(message);
   let res = JSON.parse(ret.o);
-
+  //console.log(message);
   console.log("Endpoint: " + ret.n);
   switch (ret.n) {
     case "Authenticate2FA":
-      variables.force2FA = false;
       let paramO;
       if (ret.o != undefined) {
         paramO = JSON.parse(ret.o);
         variables.sessionToken = JSON.stringify(paramO.SessionToken);
-        variables.userId = JSON.stringify(paramO.UserId);
-        authentication.Authenticate2FA();
+        variables.userId = parseInt(paramO.UserId);
+        userInfo.GetUserInfo();
+        variables.eventEmitter.emit("Connected", res);
       }
       break;
     case "WebAuthenticateUser":
-      variables.userId = res.UserId;
-      userInfo.GetUserInfo();
-      if (variables.force2FA === true) {
-        authentication.Authenticate2FA();
+      if (res.Authenticated) {
+        if (res.Requires2FA) {
+          authentication.Authenticate2FA();
+        } else {
+          variables.eventEmitter.emit("Connected", res);
+          variables.userId = parseInt(res.UserId);
+          userInfo.GetUserInfo();
+        }
+      } else {
+        variables.eventEmitter.emit("Connected", res);
       }
       break;
     case "GetUserInfo":
       variables.OMSId = res.OMSId;
-      variables.force2FA = res.Use2FA;
       if (variables.accountId === 0) {
         variables.accountId = res.AccountId;
         variables.eventEmitter.emit("Ready", true);
+      } else {
+        variables.eventEmitter.emit("GetUserInfo", res);
       }
       break;
     default:

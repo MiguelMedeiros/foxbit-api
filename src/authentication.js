@@ -6,7 +6,6 @@ let Connect = (user = "", password = "") => {
   variables.userPass = password;
   //Event Open Connection
   variables.ws.on("open", function open() {
-    variables.eventEmitter.emit("Connected", true);
     if (variables.userLogin && variables.userPass) {
       WebAuthenticateUser();
     }
@@ -66,7 +65,7 @@ let Authenticate2FA = () => {
     });
   } else {
     requestPayload = {
-      UserId: variables.userId,
+      UserId: parseInt(variables.userId),
       SessionToken: JSON.parse(variables.sessionToken)
     };
     let frame = {
