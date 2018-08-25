@@ -64,12 +64,12 @@ const foxbit = require("foxbit-api");
 
 ## Funções
 
-Segue a lista de funções para se conectar com o WebSocket da API da Foxbit.
+Segue a lista de funções para se conectar com o WebSocket da API da Foxbit.<br/>**Não é necessária as credenciais para acessar os métodos públicos.**
 
 ### Connect
 
 **Método Público**<br/>
-Se conecta na API.<br/>**Não é necessária as credenciais para acessar os métodos públicos.**<br/>[Link Documentação](https://foxbit.com.br/api/docs/websocket_intro.html#webauthenticateuser)
+Se conecta na API.<br/>[Link Documentação](https://foxbit.com.br/api/docs/websocket_intro.html#webauthenticateuser)
 
 ```node
 // Credenciais
