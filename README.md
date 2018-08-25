@@ -374,7 +374,7 @@ foxbit.eventEmitter.on("Connected", res => {
 });
 ```
 
-### UnsubscribeTicker
+### UnsubscribeTrades
 
 Desinscreve no retorno de últimas Trades.
 
