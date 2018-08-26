@@ -6,7 +6,7 @@
 
 Descrição: Pacote NPM de acesso via WebSocket para a API da exchange brasileira Foxbit.
 
-Autor: Miguel Medeiros [[www.miguelmedeiros.com.br]](https://www.miguelmedeiros.com.br)<br />
+Autor: Miguel Medeiros [[Site]](https://www.miguelmedeiros.com.br) [[Youtube]](https://www.youtube.com/user/miguelmedeiros) [[Twitter]](https://twitter.com/_miguelmedeiros)<br />
 Exchange: [[Foxbit]](https://foxbit.com.br/)<br />
 Documentação: [[Site]](https://foxbit.com.br/api/docs) [[PDF]](https://github.com/MiguelMedeiros/foxbit-api/blob/master/api-doc-alphapoint.pdf)
 
