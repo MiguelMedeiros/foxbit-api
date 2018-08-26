@@ -362,8 +362,15 @@ Retorna histórico de Tickers.<br/>[Link Documentação](https://foxbit.com.br/a
 
 ```node
 foxbit.eventEmitter.on("Connected", res => {
-  foxbit.SubscribeTicker(50);
+  foxbit.SubscribeTicker(1);
+
+  // esse evento é disparado quando vc se inscreve no ticker
   foxbit.eventEmitter.on("SubscribeTicker", res => {
+    console.log(res);
+  });
+
+  // esse evento é disparado quando acontece alguma mudanca de ticker
+  foxbit.eventEmitter.on("TickerDataUpdateEvent", res => {
     console.log(res);
   });
 });
@@ -377,7 +384,14 @@ Retorna últimas Trades.
 ```node
 foxbit.eventEmitter.on("Connected", res => {
   foxbit.SubscribeTrades();
+
+  // esse evento é disparado quando você se inscreve para receber Trades
   foxbit.eventEmitter.on("SubscribeTrades", res => {
+    console.log(res);
+  });
+
+  // esse evento é disparado quando acontece alguma Trade
+  foxbit.eventEmitter.on("TradeDataUpdateEvent", res => {
     console.log(res);
   });
 });
