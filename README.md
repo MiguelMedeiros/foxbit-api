@@ -73,7 +73,7 @@ Segue a lista de funções para se conectar com o WebSocket da API da Foxbit.
 
 ### Funções Públicas
 
-**Não é necessária as credenciais para acessar os métodos públicos.**
+Não é necessária as credenciais para acessar os métodos públicos.
 
 #### Connect
 
@@ -275,7 +275,7 @@ foxbit.eventEmitter.on("Connected", res => {
 
 ### Funções Privadas
 
-**Ao se conectar é necessário usar credenciais (usuário e senha) para acessar os métodos privados.**
+Ao se conectar é necessário usar credenciais (usuário e senha) para acessar os métodos privados.
 
 #### GetUserConfig
 
