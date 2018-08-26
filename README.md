@@ -4,14 +4,14 @@
 [![NPM](https://img.shields.io/david/MiguelMedeiros/foxbit-api.svg?style=flat-square)](https://david-dm.org/MiguelMedeiros/foxbit-api#info=dependencies)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/MiguelMedeiros/foxbit-api)
 
-Descrição: Pacote NPM de acesso via WebSocket para a API da exchange brasileira Foxbit.
+Pacote NPM de acesso via WebSocket para a API da exchange brasileira Foxbit.
 
-Autor: Miguel Medeiros [[Site]](https://www.miguelmedeiros.com.br) [[Youtube]](https://www.youtube.com/user/miguelmedeiros) [[Twitter]](https://twitter.com/_miguelmedeiros)<br />
-Exchange: [[Foxbit]](https://foxbit.com.br/)<br />
-Documentação: [[Site]](https://foxbit.com.br/api/docs) [[PDF]](https://github.com/MiguelMedeiros/foxbit-api/blob/master/api-doc-alphapoint.pdf)
+**Autor:** Miguel Medeiros [[Site]](https://www.miguelmedeiros.com.br) [[Youtube]](https://www.youtube.com/user/miguelmedeiros) [[Twitter]](https://twitter.com/_miguelmedeiros)<br />
+**Exchange:** [[Foxbit]](https://foxbit.com.br/)<br />
+**Documentação:** [[Site]](https://foxbit.com.br/api/docs) [[PDF]](https://github.com/MiguelMedeiros/foxbit-api/blob/master/api-doc-alphapoint.pdf)
 
 Gostou do trabalho? Então me pague um café!<br/>
-BTC Wallet: 1NM76h5SvdhTdmS8dksGwWpHNbnVngWczR<br/><br/>
+Carteira BTC: **1NM76h5SvdhTdmS8dksGwWpHNbnVngWczR**<br/><br/>
 
 ---
 
