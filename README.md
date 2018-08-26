@@ -52,7 +52,7 @@ Portanto, não é um pacote oficial da Foxbit.<br/>
 
 ## Instalação
 
-Você precisa importa o pacote para seu projeto: [npm package](https://www.npmjs.com/package/foxbitapi)
+Você precisa importar o pacote para seu projeto:
 
 ```bash
 npm i foxbit-api --save
