@@ -8,10 +8,7 @@ Descrição: Pacote NPM de acesso via WebSocket para a API da exchange brasileir
 
 Autor: Miguel Medeiros - [www.miguelmedeiros.com.br](https://www.miguelmedeiros.com.br)<br />
 Exchange: [Foxbit](https://foxbit.com.br/)<br />
-Documentação:
-
-- [Site](https://foxbit.com.br/api/docs)
-- [PDF](https://github.com/MiguelMedeiros/foxbit-api/blob/master/api-doc-alphapoint.pdf)
+Documentação:[[Site]](https://foxbit.com.br/api/docs) [[PDF]](https://github.com/MiguelMedeiros/foxbit-api/blob/master/api-doc-alphapoint.pdf)
 
 Gostou do trabalho? Então me pague um café!<br/>
 BTC Wallet: 1NM76h5SvdhTdmS8dksGwWpHNbnVngWczR<br/><br/>
