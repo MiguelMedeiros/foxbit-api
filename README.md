@@ -21,7 +21,8 @@ Portanto, não é um pacote oficial da Foxbit.<br/>
 
 ## Readme Index
 
-- [NodeJS Instalação](#instalação-e-configuração)
+- [Instalação](#instalação)
+- [Configuração](#configuração)
 - [Funções](#funções)
   - [Connect](#connect): Se conecta na API.
   - [LogOut](#logout): Finaliza conexão.
@@ -49,17 +50,15 @@ Portanto, não é um pacote oficial da Foxbit.<br/>
 - [Contribua com Código](#contribua-com-código)
 - [License](#license-mit)
 
-## Instalação e Configuração
+## Instalação
 
 Você precisa importa o pacote para seu projeto: [npm package](https://www.npmjs.com/package/foxbitapi)
-
-### Instalar
 
 ```bash
 npm i foxbit-api --save
 ```
 
-### Configuração
+## Configuração
 
 ```node
 // importar foxbit api package
