@@ -23,29 +23,29 @@ Portanto, não é um pacote oficial da Foxbit.<br/>
 
 - [NodeJS Instalação](#nodejs-instalação)
 - [Funções](#funções)
-  - [Connect](#connect)
-  - [LogOut](#logout)
-  - [GetUserConfig](#getuserconfig)
-  - [GetUserInfo](#getyserinfo)
-  - [GetUserPermissions](#getuserpermissions)
-  - [CancelAllOrders](#cancelallorders)
-  - [GetAccountInfo](#getaccountinfo)
-  - [GetAccountPositions](#getaccountpositions)
-  - [GetAccountTrades](#getaccounttrades)
-  - [GetAccountTransactions](#getaccounttransactions)
-  - [GetInstrument](#getinstrument)
-  - [GetInstruments](#getinstruments)
-  - [GetOpenOrders](#getopenorders)
-  - [GetOrdersHistory](#getordershistory)
-  - [GetProduct](#getproduct)
-  - [GetProducts](#getproducts)
-  - [SendOrder](#sendorder)
-  - [GetL2Snapshot](#getl2snapshot)
-  - [GetTickerHistory](#gettickerhistory)
-  - [SubscribeTicker](#subscribeticker)
-  - [SubscribeTrades](#subscribetrades)
-  - [UnsubscribeTicker](#unsubscribeticker)
-  - [UnsubscribeTrades](#unsubscribetrades)
+  - [Connect](#connect): Se conecta na API.
+  - [LogOut](#logout): Finaliza conexão.
+  - [GetUserConfig](#getuserconfig): Retorna configurações definidas pelo usuário.
+  - [GetUserInfo](#getyserinfo): Retorna os dados das informações de Usuário.
+  - [GetUserPermissions](#getuserpermissions): Retorna permissões específicas para o usuário solicitante.
+  - [CancelAllOrders](#cancelallorders): Cancela todas as ordens abertas.
+  - [GetAccountInfo](#getaccountinfo): Retorna informação sobre a conta do usuário logado.
+  - [GetAccountPositions](#getaccountpositions): Retorna um array com o histórico do balanço do usuário.
+  - [GetAccountTrades](#getaccounttrades): Retorna um array com o histórico do ordens executadas do usuário.
+  - [GetAccountTransactions](#getaccounttransactions): Retorna um array com o histórico do Transações.
+  - [GetInstrument](#getinstrument): Retorna o detalhamento do Par por ID.
+  - [GetInstruments](#getinstruments): Retorna um array de pares cadastrados.
+  - [GetOpenOrders](#getopenorders): Pega as moedas cadastradas.
+  - [GetOrdersHistory](#getordershistory): Retorna um array o histórico de ordens.
+  - [GetProduct](#getproduct): Pega a moedas cadastrado por ID.
+  - [GetProducts](#getproducts): Pega as moedas cadastradas.
+  - [SendOrder](#sendorder): Envia Ordem de Compra/Venda.
+  - [GetL2Snapshot](#getl2snapshot): Retorna spanshot do Orderbook.
+  - [GetTickerHistory](#gettickerhistory): Retorna histórico de Tickers.
+  - [SubscribeTicker](#subscribeticker): Retorna histórico de Tickers.
+  - [SubscribeTrades](#subscribetrades): Retorna últimas Trades.
+  - [UnsubscribeTicker](#unsubscribeticker): Desinscreve do Ticker.
+  - [UnsubscribeTrades](#unsubscribetrades): Desinscreve no retorno de últimas Trades.
 - [Contribua com Código](#contribua-com-código)
 - [License](#license-mit)
 
@@ -196,7 +196,7 @@ foxbit.eventEmitter.on("Ready", res => {
 });
 ```
 
-### GetAccountPositions
+### GetAccountTrades
 
 **Método Privado**<br/>
 Retorna um array com o histórico do ordens executadas do usuário.<br/>[Link Documentação](https://foxbit.com.br/api/docs/websocket_intro.html?highlight=getopenorders#getaccounttrades)
@@ -269,7 +269,7 @@ foxbit.eventEmitter.on("Connected", res => {
 ### GetOrdersHistory
 
 **Método Público**<br/>
-Retorna um array o histórico de ordens
+Retorna um array o histórico de ordens.
 
 ```node
 foxbit.eventEmitter.on("Ready", res => {
