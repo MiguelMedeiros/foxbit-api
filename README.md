@@ -21,7 +21,7 @@ Portanto, não é um pacote oficial da Foxbit.<br/>
 
 ## Readme Index
 
-- [NodeJS Instalação](#nodejs-instalação)
+- [NodeJS Instalação](#instalação-e-configuração)
 - [Funções](#funções)
   - [Connect](#connect): Se conecta na API.
   - [LogOut](#logout): Finaliza conexão.
@@ -40,7 +40,7 @@ Portanto, não é um pacote oficial da Foxbit.<br/>
   - [GetProduct](#getproduct): Pega a moedas cadastrado por ID.
   - [GetProducts](#getproducts): Pega as moedas cadastradas.
   - [SendOrder](#sendorder): Envia Ordem de Compra/Venda.
-  - [GetL2Snapshot](#getl2snapshot): Retorna spanshot do Orderbook.
+  - [GetL2Snapshot](#getl2snapshot): Retorna snapshot do Orderbook.
   - [GetTickerHistory](#gettickerhistory): Retorna histórico de Tickers.
   - [SubscribeTicker](#subscribeticker): Retorna histórico de Tickers.
   - [SubscribeTrades](#subscribetrades): Retorna últimas Trades.
@@ -49,13 +49,17 @@ Portanto, não é um pacote oficial da Foxbit.<br/>
 - [Contribua com Código](#contribua-com-código)
 - [License](#license-mit)
 
-## NodeJS Instalação
+## Instalação e Configuração
 
-Você precisa importa o pacote para seu projeto.<br/>[npm package](https://www.npmjs.com/package/foxbitapi)
+Você precisa importa o pacote para seu projeto: [npm package](https://www.npmjs.com/package/foxbitapi)
+
+### Instalar
 
 ```bash
 npm i foxbit-api --save
 ```
+
+### Configuração
 
 ```node
 // importar foxbit api package
