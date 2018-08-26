@@ -25,30 +25,31 @@ Portanto, não é um pacote oficial da Foxbit.<br/>
 - [Configuração](#configuração)
 - [Funções](#funções)
   - [Funções Públicas](#funções-públicas)
-    - [Connect](#connect): Se conecta na API.
-    - [LogOut](#logout): Finaliza conexão.
-    - [GetInstrument](#getinstrument): Retorna o detalhamento do Par por ID.
-    - [GetInstruments](#getinstruments): Retorna um array de pares cadastrados.
-    - [GetOpenOrders](#getopenorders): Pega as moedas cadastradas.
-    - [GetOrdersHistory](#getordershistory): Retorna um array o histórico de ordens.
-    - [GetProduct](#getproduct): Pega a moedas cadastrado por ID.
-    - [GetProducts](#getproducts): Pega as moedas cadastradas.
-    - [GetL2Snapshot](#getl2snapshot): Retorna snapshot do Orderbook.
-    - [GetTickerHistory](#gettickerhistory): Retorna histórico de Tickers.
-    - [SubscribeTicker](#subscribeticker): Retorna histórico de Tickers.
-    - [SubscribeTrades](#subscribetrades): Retorna últimas Trades.
-    - [UnsubscribeTicker](#unsubscribeticker): Desinscreve do Ticker.
-    - [UnsubscribeTrades](#unsubscribetrades): Desinscreve no retorno de últimas Trades.
+    - [Connect](#connect): Conecta na API via WebSocket.
+    - [LogOut](#logout): Finaliza conexão com o WebSocket..
+    - [GetInstrument](#getinstrument): Retorna as informações par de moedas por ID.
+    - [GetInstruments](#getinstruments): Retorna um array de pares de moedas cadastrados.
+    - [GetOpenOrders](#getopenorders): Retorna as ordens abertas no livro de ordens.
+    - [GetOrdersHistory](#getordershistory): Retorna um array com o histórico de ordens.
+    - [GetProduct](#getproduct): Retorna a moeda cadastrado por ID.
+    - [GetProducts](#getproducts): Retorna as moedas cadastradas.
+    - [GetL2Snapshot](#getl2snapshot): Retorna um spanshot do Orderbook.
+    - [GetTickerHistory](#gettickerhistory): Retorna um histórico de Tickers.
+    - [SubscribeTicker](#subscribeticker): Se inscreve para receber Tickers atualizados.
+    - [SubscribeTrades](#subscribetrades): Se inscreve para receber Trades atualizadas.
+    - [UnsubscribeTicker](#unsubscribeticker): Se desinscreve do Ticker.
+    - [UnsubscribeTrades](#unsubscribetrades): Se desinscreve das Trades.
   - [Funções Privadas](#funções-privadas)
     - [GetUserConfig](#getuserconfig): Retorna configurações definidas pelo usuário.
     - [GetUserInfo](#getyserinfo): Retorna os dados das informações de Usuário.
-    - [GetUserPermissions](#getuserpermissions): Retorna permissões específicas para o usuário solicitante.
-    - [CancelAllOrders](#cancelallorders): Cancela todas as ordens abertas.
-    - [GetAccountInfo](#getaccountinfo): Retorna informação sobre a conta do usuário logado.
-    - [GetAccountPositions](#getaccountpositions): Retorna um array com o histórico do balanço do usuário.
-    - [GetAccountTrades](#getaccounttrades): Retorna um array com o histórico do ordens executadas do usuário.
-    - [GetAccountTransactions](#getaccounttransactions): Retorna um array com o histórico do Transações.
+    - [GetUserPermissions](#getuserpermissions): Retorna permissões do usuário solicitante.
     - [SendOrder](#sendorder): Envia Ordem de Compra/Venda.
+    - [CancelAllOrders](#cancelallorders): Cancela todas as ordens abertas.
+    - [CancelOrder](#cancelorder): Cancela ordem que ainda não foi executada.
+    - [GetAccountInfo](#getaccountinfo): Retorna informação sobre a conta do usuário logado.
+    - [GetAccountPositions](#getaccountpositions): Retorna um array com o balanço do usuário.
+    - [GetAccountTrades](#getaccounttrades): Retorna um array com o histórico do ordens executadas do usuário.
+    - [GetAccountTransactions](#getaccounttransactions): Retorna um array com o histórico de transações abertas do usuário.
 - [Contribua com Código](#contribua-com-código)
 - [License](#license-mit)
 
@@ -73,11 +74,11 @@ Segue a lista de funções para se conectar com o WebSocket da API da Foxbit.
 
 ### Funções Públicas
 
-Não é necessária as credenciais para acessar os métodos públicos.
+Não é necessária de credenciais para acessar os métodos públicos.
 
 #### Connect
 
-Se conecta na API.<br/>[Link Documentação](https://foxbit.com.br/api/docs/websocket_intro.html#webauthenticateuser)
+Conecta na API via WebSocket.<br/>[Link Documentação](https://foxbit.com.br/api/docs/websocket_intro.html#webauthenticateuser)
 
 ```node
 // Credenciais
@@ -92,7 +93,7 @@ foxbit.eventEmitter.on("Connected", res => {
 
 #### Logout
 
-Finaliza conexão.<br/>[Link Documentação](https://foxbit.com.br/api/docs/websocket_intro.html?highlight=getopenorders#logout)
+Finaliza conexão com o WebSocket.<br/>[Link Documentação](https://foxbit.com.br/api/docs/websocket_intro.html?highlight=getopenorders#logout)
 
 ```node
 foxbit.eventEmitter.on("Connected", res => {
@@ -105,7 +106,7 @@ foxbit.eventEmitter.on("Connected", res => {
 
 #### GetInstrument
 
-Retorna o detalhamento do Par por ID.<br/>[Link Documentação](https://foxbit.com.br/api/docs/websocket_intro.html?highlight=getopenorders#getinstrument)
+Retorna as informações par de moedas por ID.<br/>[Link Documentação](https://foxbit.com.br/api/docs/websocket_intro.html?highlight=getopenorders#getinstrument)
 
 ```node
 foxbit.eventEmitter.on("Connected", res => {
@@ -118,7 +119,7 @@ foxbit.eventEmitter.on("Connected", res => {
 
 #### GetInstruments
 
-Retorna um array de pares cadastrados.<br/>[Link Documentação](https://foxbit.com.br/api/docs/websocket_intro.html?highlight=getopenorders#getinstruments)
+Retorna um array de pares de moedas cadastrados.<br/>[Link Documentação](https://foxbit.com.br/api/docs/websocket_intro.html?highlight=getopenorders#getinstruments)
 
 ```node
 foxbit.eventEmitter.on("Connected", res => {
@@ -131,7 +132,7 @@ foxbit.eventEmitter.on("Connected", res => {
 
 #### GetOpenOrders
 
-Pega as moedas cadastradas.<br/>[Link Documentação](https://foxbit.com.br/api/docs/websocket_intro.html?highlight=getopenorders#getopenorders)
+Retorna as ordens abertas no livro de ordens.<br/>[Link Documentação](https://foxbit.com.br/api/docs/websocket_intro.html?highlight=getopenorders#getopenorders)
 
 ```node
 foxbit.eventEmitter.on("Connected", res => {
@@ -144,7 +145,7 @@ foxbit.eventEmitter.on("Connected", res => {
 
 #### GetOrdersHistory
 
-Retorna um array o histórico de ordens.
+Retorna um array com o histórico de ordens.
 
 ```node
 foxbit.eventEmitter.on("Ready", res => {
@@ -157,7 +158,7 @@ foxbit.eventEmitter.on("Ready", res => {
 
 #### GetProduct
 
-Pega a moedas cadastrado por ID.<br/>[Link Documentação](https://foxbit.com.br/api/docs/websocket_intro.html?highlight=getopenorders#getproduct)
+Retorna a moeda cadastrado por ID.<br/>[Link Documentação](https://foxbit.com.br/api/docs/websocket_intro.html?highlight=getopenorders#getproduct)
 
 ```node
 foxbit.eventEmitter.on("Connected", res => {
@@ -170,7 +171,7 @@ foxbit.eventEmitter.on("Connected", res => {
 
 #### GetProducts
 
-Pega as moedas cadastradas.<br/>[Link Documentação](https://foxbit.com.br/api/docs/websocket_intro.html?highlight=getopenorders#getproducts)
+Retorna as moedas cadastradas.<br/>[Link Documentação](https://foxbit.com.br/api/docs/websocket_intro.html?highlight=getopenorders#getproducts)
 
 ```node
 foxbit.eventEmitter.on("Connected", res => {
@@ -183,7 +184,7 @@ foxbit.eventEmitter.on("Connected", res => {
 
 #### GetL2Snapshot
 
-Retorna spanshot do Orderbook.<br/>[Link Documentação](https://foxbit.com.br/api/docs/websocket_intro.html?highlight=getopenorders#getl2snapshot)
+Retorna um spanshot do Orderbook.<br/>[Link Documentação](https://foxbit.com.br/api/docs/websocket_intro.html?highlight=getopenorders#getl2snapshot)
 
 ```node
 foxbit.eventEmitter.on("Connected", res => {
@@ -196,7 +197,7 @@ foxbit.eventEmitter.on("Connected", res => {
 
 #### GetTickerHistory
 
-Retorna histórico de Tickers.<br/>[Link Documentação](https://foxbit.com.br/api/docs/websocket_intro.html#gettickerhistory)
+Retorna um histórico de Tickers.<br/>[Link Documentação](https://foxbit.com.br/api/docs/websocket_intro.html#gettickerhistory)
 
 ```node
 foxbit.eventEmitter.on("Connected", res => {
@@ -209,7 +210,7 @@ foxbit.eventEmitter.on("Connected", res => {
 
 #### SubscribeTicker
 
-Retorna histórico de Tickers.<br/>[Link Documentação](https://foxbit.com.br/api/docs/websocket_intro.html?highlight=getopenorders#subscribeticker)
+Se inscreve para receber Tickers atualizados.<br/>[Link Documentação](https://foxbit.com.br/api/docs/websocket_intro.html?highlight=getopenorders#subscribeticker)
 
 ```node
 foxbit.eventEmitter.on("Connected", res => {
@@ -229,7 +230,7 @@ foxbit.eventEmitter.on("Connected", res => {
 
 #### SubscribeTrades
 
-Retorna últimas Trades.
+Se inscreve para receber Trades atualizadas.
 
 ```node
 foxbit.eventEmitter.on("Connected", res => {
@@ -249,7 +250,7 @@ foxbit.eventEmitter.on("Connected", res => {
 
 #### UnsubscribeTicker
 
-Desinscreve do Ticker.<br/>[Link Documentação](https://foxbit.com.br/api/docs/websocket_intro.html?highlight=getopenorders#unsubscribeticker)
+Se desinscreve do Ticker.<br/>[Link Documentação](https://foxbit.com.br/api/docs/websocket_intro.html?highlight=getopenorders#unsubscribeticker)
 
 ```node
 foxbit.eventEmitter.on("Connected", res => {
@@ -262,7 +263,7 @@ foxbit.eventEmitter.on("Connected", res => {
 
 #### UnsubscribeTrades
 
-Desinscreve no retorno de últimas Trades.
+Se desinscreve das Trades.
 
 ```node
 foxbit.eventEmitter.on("Connected", res => {
@@ -277,19 +278,6 @@ foxbit.eventEmitter.on("Connected", res => {
 
 Ao se conectar é necessário usar credenciais (usuário e senha) para acessar os métodos privados.
 
-#### GetUserConfig
-
-Retorna configurações definidas pelo usuário.<br/>[Link Documentação](https://foxbit.com.br/api/docs/websocket_intro.html#getuserconfig)
-
-```node
-foxbit.eventEmitter.on("Ready", res => {
-  foxbit.GetUserConfig();
-  foxbit.eventEmitter.on("GetUserConfig", res => {
-    console.log(res);
-  });
-});
-```
-
 #### GetUserInfo
 
 Retorna os dados das informações de Usuário.<br/>[Link Documentação](https://foxbit.com.br/api/docs/websocket_intro.html?highlight=getopenorders#getuserinfo)
@@ -303,9 +291,22 @@ foxbit.eventEmitter.on("Connected", res => {
 });
 ```
 
+#### GetUserConfig
+
+Retorna configurações definidas pelo usuário.<br/>[Link Documentação](https://foxbit.com.br/api/docs/websocket_intro.html#getuserconfig)
+
+```node
+foxbit.eventEmitter.on("Ready", res => {
+  foxbit.GetUserConfig();
+  foxbit.eventEmitter.on("GetUserConfig", res => {
+    console.log(res);
+  });
+});
+```
+
 #### GetUserPermissions
 
-Retorna permissões específicas para o usuário solicitante.<br/>[Link Documentação](https://foxbit.com.br/api/docs/websocket_intro.html?highlight=getopenorders#getuserpermissions)
+Retorna permissões do usuário solicitante.<br/>[Link Documentação](https://foxbit.com.br/api/docs/websocket_intro.html?highlight=getopenorders#getuserpermissions)
 
 ```node
 foxbit.eventEmitter.on("Ready", res => {
@@ -336,7 +337,7 @@ foxbit.eventEmitter.on("Ready", res => {
 
 #### CancelAllOrders
 
-Cancela todas as ordens abertas para o par especificado.<br/>[Link Documentação](https://foxbit.com.br/api/docs/websocket_intro.html?highlight=getopenorders#cancelallorders)
+Cancela todas as ordens abertas.<br/>[Link Documentação](https://foxbit.com.br/api/docs/websocket_intro.html?highlight=getopenorders#cancelallorders)
 
 ```node
 foxbit.eventEmitter.on("Ready", res => {
@@ -349,7 +350,7 @@ foxbit.eventEmitter.on("Ready", res => {
 
 #### CancelOrder
 
-Cancela ordem específica que ainda não foi executada.<br/>[Link Documentação](https://foxbit.com.br/api/docs/websocket_intro.html?highlight=getopenorders#cancelorder)
+Cancela ordem que ainda não foi executada.<br/>[Link Documentação](https://foxbit.com.br/api/docs/websocket_intro.html?highlight=getopenorders#cancelorder)
 
 ```node
 let ClientOrderId = 11111;
@@ -377,7 +378,7 @@ foxbit.eventEmitter.on("Ready", res => {
 
 #### GetAccountPositions
 
-Retorna um array com o histórico do balanço do usuário.<br/>[Link Documentação](https://foxbit.com.br/api/docs/websocket_intro.html?highlight=getopenorders#getaccountpositions)
+Retorna um array com o balanço do usuário.<br/>[Link Documentação](https://foxbit.com.br/api/docs/websocket_intro.html?highlight=getopenorders#getaccountpositions)
 
 ```node
 foxbit.eventEmitter.on("Ready", res => {
@@ -403,7 +404,7 @@ foxbit.eventEmitter.on("Ready", res => {
 
 #### GetAccountTransactions
 
-Retorna um array com o histórico do Transações.<br/>[Link Documentação](https://foxbit.com.br/api/docs/websocket_intro.html?highlight=getopenorders#getaccounttransactions)
+Retorna um array com o histórico de transações abertas do usuário.<br/>[Link Documentação](https://foxbit.com.br/api/docs/websocket_intro.html?highlight=getopenorders#getaccounttransactions)
 
 ```node
 foxbit.eventEmitter.on("Ready", res => {
@@ -416,6 +417,6 @@ foxbit.eventEmitter.on("Ready", res => {
 
 ## Contribua com Código
 
-Ainda faltam algumas chamadas para completar a API como um todo. Então ficarei agradecido se você quiser contribuir para deixar esse pacote mais completo! Se sinta à vontade em fazer um 'pull request', afinal esse repositório é aberto!
+Ainda faltam algumas chamadas para completar a API como um todo. Vou adorar se você quiser contribuir para deixar esse pacote mais completo! Sinta-se à vontade em fazer um 'pull request'! Afinal esse repositório é aberto! <3
 
 ## LICENSE [MIT](LICENSE)
