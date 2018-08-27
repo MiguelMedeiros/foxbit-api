@@ -3,6 +3,7 @@
 [![NPM](https://img.shields.io/npm/v/foxbit-api.svg?style=flat-square)](https://www.npmjs.com/package/foxbit-api)
 [![NPM](https://img.shields.io/david/MiguelMedeiros/foxbit-api.svg?style=flat-square)](https://david-dm.org/MiguelMedeiros/foxbit-api#info=dependencies)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/MiguelMedeiros/foxbit-api)
+[![Known Vulnerabilities](https://snyk.io/test/github/MiguelMedeiros/foxbit-api/badge.svg)](https://snyk.io/test/github/MiguelMedeiros/foxbit-api)
 
 Pacote NPM de acesso via WebSocket para a API da exchange brasileira Foxbit.
 
