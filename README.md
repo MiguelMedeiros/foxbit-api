@@ -41,7 +41,7 @@ Portanto, não é um pacote oficial da Foxbit.<br/>
     - [UnsubscribeTrades](#unsubscribetrades): Se desinscreve das Trades.
   - [Funções Privadas](#funções-privadas)
     - [GetUserConfig](#getuserconfig): Retorna configurações definidas pelo usuário.
-    - [GetUserInfo](#getyserinfo): Retorna os dados das informações de Usuário.
+    - [GetUserInfo](#getuserinfo): Retorna os dados das informações de Usuário.
     - [GetUserPermissions](#getuserpermissions): Retorna permissões do usuário solicitante.
     - [GetOrdersHistory](#getordershistory): Retorna um array com o histórico de ordens.
     - [SendOrder](#sendorder): Envia Ordem de Compra/Venda.
