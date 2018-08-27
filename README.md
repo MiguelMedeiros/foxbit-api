@@ -356,7 +356,8 @@ foxbit.eventEmitter.on("GetUserInfo", res => {
 Retorna configurações definidas pelo usuário.<br/>[Link Documentação](https://foxbit.com.br/api/docs/websocket_intro.html#getuserconfig)
 
 ```javascript
-// Evento disparado quando o WebSocket foi conectado e recebeu as informações do usuário.
+// Evento disparado quando o WebSocket foi conectado
+// e recebeu as informações do usuário.
 foxbit.eventEmitter.on("Ready", res => {
   // Dispara chamada GetUserConfig.
   foxbit.GetUserConfig();
@@ -373,7 +374,8 @@ foxbit.eventEmitter.on("GetUserConfig", res => {
 Retorna permissões do usuário solicitante.<br/>[Link Documentação](https://foxbit.com.br/api/docs/websocket_intro.html?highlight=getopenorders#getuserpermissions)
 
 ```javascript
-// Evento disparado quando o WebSocket foi conectado e recebeu as informações do usuário.
+// Evento disparado quando o WebSocket foi conectado
+// e recebeu as informações do usuário.
 foxbit.eventEmitter.on("Ready", res => {
   // Dispara chamada GetUserPermissions.
   foxbit.GetUserPermissions();
@@ -390,7 +392,8 @@ foxbit.eventEmitter.on("GetUserPermissions", res => {
 Envia Ordem de Compra/Venda.<br/>[Link Documentação](https://foxbit.com.br/api/docs/websocket_intro.html?highlight=getopenorders#sendorder)
 
 ```javascript
-// Evento disparado quando o WebSocket foi conectado e recebeu as informações do usuário.
+// Evento disparado quando o WebSocket foi conectado
+// e recebeu as informações do usuário.
 foxbit.eventEmitter.on("Ready", res => {
   // Variáveis de parametrização
   let Side = "Sell"; // Buy, Sell
@@ -414,7 +417,8 @@ foxbit.eventEmitter.on("SendOrder", res => {
 Cancela todas as ordens abertas.<br/>[Link Documentação](https://foxbit.com.br/api/docs/websocket_intro.html?highlight=getopenorders#cancelallorders)
 
 ```javascript
-// Evento disparado quando o WebSocket foi conectado e recebeu as informações do usuário.
+// Evento disparado quando o WebSocket foi conectado
+// e recebeu as informações do usuário.
 foxbit.eventEmitter.on("Ready", res => {
   // Dispara chamada CancelAllOrders.
   foxbit.CancelAllOrders();
@@ -431,7 +435,8 @@ foxbit.eventEmitter.on("CancelAllOrders", res => {
 Cancela ordem que ainda não foi executada.<br/>[Link Documentação](https://foxbit.com.br/api/docs/websocket_intro.html?highlight=getopenorders#cancelorder)
 
 ```javascript
-// Evento disparado quando o WebSocket foi conectado e recebeu as informações do usuário.
+// Evento disparado quando o WebSocket foi conectado
+// e recebeu as informações do usuário.
 foxbit.eventEmitter.on("Ready", res => {
   // Variáveis de Parametrização
   let ClientOrderId = 11111;
@@ -452,7 +457,8 @@ foxbit.eventEmitter.on("CancelOrder", res => {
 Retorna informação sobre a conta do usuário logado.<br/>[Link Documentação](https://foxbit.com.br/api/docs/websocket_intro.html?highlight=getopenorders#getaccountinfo)
 
 ```javascript
-// Evento disparado quando o WebSocket foi conectado e recebeu as informações do usuário.
+// Evento disparado quando o WebSocket foi conectado
+// e recebeu as informações do usuário.
 foxbit.eventEmitter.on("Ready", res => {
   // Dispara chamada CancelOrder.
   foxbit.GetAccountInfo();
@@ -469,7 +475,8 @@ foxbit.eventEmitter.on("GetAccountInfo", res => {
 Retorna um array com o balanço do usuário.<br/>[Link Documentação](https://foxbit.com.br/api/docs/websocket_intro.html?highlight=getopenorders#getaccountpositions)
 
 ```javascript
-// Evento disparado quando o WebSocket foi conectado e recebeu as informações do usuário.
+// Evento disparado quando o WebSocket foi conectado
+// e recebeu as informações do usuário.
 foxbit.eventEmitter.on("Ready", res => {
   // Dispara chamada GetAccountPositions.
   foxbit.GetAccountPositions();
@@ -486,7 +493,8 @@ foxbit.eventEmitter.on("GetAccountPositions", res => {
 Retorna um array com o histórico do ordens executadas do usuário.<br/>[Link Documentação](https://foxbit.com.br/api/docs/websocket_intro.html?highlight=getopenorders#getaccounttrades)
 
 ```javascript
-// Evento disparado quando o WebSocket foi conectado e recebeu as informações do usuário.
+// Evento disparado quando o WebSocket foi conectado
+// e recebeu as informações do usuário.
 foxbit.eventEmitter.on("Ready", res => {
   // Dispara chamada GetAccountTrades.
   foxbit.GetAccountTrades();
@@ -503,7 +511,8 @@ foxbit.eventEmitter.on("GetAccountTrades", res => {
 Retorna um array com o histórico de transações abertas do usuário.<br/>[Link Documentação](https://foxbit.com.br/api/docs/websocket_intro.html?highlight=getopenorders#getaccounttransactions)
 
 ```javascript
-// Evento disparado quando o WebSocket foi conectado e recebeu as informações do usuário.
+// Evento disparado quando o WebSocket foi conectado
+// e recebeu as informações do usuário.
 foxbit.eventEmitter.on("Ready", res => {
   // Dispara chamada GetAccountTransactions.
   foxbit.GetAccountTransactions();
