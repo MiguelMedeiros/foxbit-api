@@ -31,7 +31,6 @@ Portanto, não é um pacote oficial da Foxbit.<br/>
     - [GetInstrument](#getinstrument): Retorna as informações par de moedas por ID.
     - [GetInstruments](#getinstruments): Retorna um array de pares de moedas cadastrados.
     - [GetOpenOrders](#getopenorders): Retorna as ordens abertas no livro de ordens.
-    - [GetOrdersHistory](#getordershistory): Retorna um array com o histórico de ordens.
     - [GetProduct](#getproduct): Retorna a moeda cadastrado por ID.
     - [GetProducts](#getproducts): Retorna as moedas cadastradas.
     - [GetL2Snapshot](#getl2snapshot): Retorna um spanshot do Orderbook.
@@ -44,6 +43,7 @@ Portanto, não é um pacote oficial da Foxbit.<br/>
     - [GetUserConfig](#getuserconfig): Retorna configurações definidas pelo usuário.
     - [GetUserInfo](#getyserinfo): Retorna os dados das informações de Usuário.
     - [GetUserPermissions](#getuserpermissions): Retorna permissões do usuário solicitante.
+    - [GetOrdersHistory](#getordershistory): Retorna um array com o histórico de ordens.
     - [SendOrder](#sendorder): Envia Ordem de Compra/Venda.
     - [CancelAllOrders](#cancelallorders): Cancela todas as ordens abertas.
     - [CancelOrder](#cancelorder): Cancela ordem que ainda não foi executada.
@@ -160,23 +160,6 @@ foxbit.eventEmitter.on("Connected", res => {
 
 // Evento disparado quando o GetProducts foi efetuado.
 foxbit.eventEmitter.on("GetProducts", res => {
-  console.log(res);
-});
-```
-
-#### GetOrdersHistory
-
-Retorna um array com o histórico de ordens.
-
-```javascript
-// Evento disparado quando o WebSocket foi conectado.
-foxbit.eventEmitter.on("Connected", res => {
-  // Dispara chamada GetOrdersHistory.
-  foxbit.GetOrdersHistory();
-});
-
-// Evento disparado quando o GetOrdersHistory foi efetuado.
-foxbit.eventEmitter.on("GetOrdersHistory", res => {
   console.log(res);
 });
 ```
@@ -383,6 +366,24 @@ foxbit.eventEmitter.on("Ready", res => {
 
 // Evento disparado quando o GetUserPermissions foi efetuado.
 foxbit.eventEmitter.on("GetUserPermissions", res => {
+  console.log(res);
+});
+```
+
+#### GetOrdersHistory
+
+Retorna um array com o histórico de ordens.
+
+```javascript
+// Evento disparado quando o WebSocket foi conectado
+// e recebeu as informações do usuário.
+foxbit.eventEmitter.on("Ready", res => {
+  // Dispara chamada GetOrdersHistory.
+  foxbit.GetOrdersHistory();
+});
+
+// Evento disparado quando o GetOrdersHistory foi efetuado.
+foxbit.eventEmitter.on("GetOrdersHistory", res => {
   console.log(res);
 });
 ```
