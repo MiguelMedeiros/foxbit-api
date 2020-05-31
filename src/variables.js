@@ -9,7 +9,7 @@ let userId = "0";
 let accountId = 0;
 let sessionToken = "";
 let OMSId = 1;
-let wsAddress = "wss://apifoxbitprodlb.alphapoint.com/WSGateway/";
+let wsAddress = "wss://api.foxbit.com.br/WSGateway/";
 let ws = new WebSocket(wsAddress);
 
 module.exports = {
