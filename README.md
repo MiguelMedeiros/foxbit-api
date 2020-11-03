@@ -30,7 +30,6 @@ Portanto, não é um pacote oficial da Foxbit.<br/>
     - [LogOut](#logout): Finaliza conexão com o WebSocket.
     - [GetInstrument](#getinstrument): Retorna as informações par de moedas por ID.
     - [GetInstruments](#getinstruments): Retorna um array de pares de moedas cadastrados.
-    - [GetOpenOrders](#getopenorders): Retorna as ordens abertas no livro de ordens.
     - [GetProduct](#getproduct): Retorna a moeda cadastrado por ID.
     - [GetProducts](#getproducts): Retorna as moedas cadastradas.
     - [GetL2Snapshot](#getl2snapshot): Retorna um spanshot do Orderbook.
@@ -43,6 +42,7 @@ Portanto, não é um pacote oficial da Foxbit.<br/>
     - [GetUserConfig](#getuserconfig): Retorna configurações definidas pelo usuário.
     - [GetUserInfo](#getuserinfo): Retorna os dados das informações de Usuário.
     - [GetUserPermissions](#getuserpermissions): Retorna permissões do usuário solicitante.
+    - [GetOpenOrders](#getopenorders): Retorna as ordens abertas do usuário no livro de ordens.
     - [GetOrdersHistory](#getordershistory): Retorna um array com o histórico de ordens.
     - [SendOrder](#sendorder): Envia Ordem de Compra/Venda.
     - [CancelAllOrders](#cancelallorders): Cancela todas as ordens abertas.
